@@ -1,0 +1,31 @@
+#finding Pareto optimal points from a list of points
+#We use merge sort algorithm to sort points(first priority X and then Y) = O(logn)
+#We loop through the sorted list to find Pareto Optimal points = O(n)
+
+function merge_sort(list):
+    divided the list from middle
+    make two list left list and right list
+    call merge function with left list and right list
+
+fuction merge(left,right):
+    initialize i, j to 0 and create a empty list to store results
+    Iterate while there are elements in both left and right lists:
+        Compare the first elements of the tuples in left and right:
+            Append the element from left to result and Move to the next element in left
+        Check if the first element of the tuple in the 'left' list is greater than
+        the first element of the tuple in the 'right' list:
+            Append the element from right to result and Move to the next element in right
+        if first elements are equal:
+            we check the second elements(Y cordinate) using the same method as X-coordinate
+    Append any remaining element for left and right(if any)
+    return result
+
+Sort the 'points' list using merge sort and store the results
+Initialize 'current_best' as the last element of 'sorted_points'
+create a place to store Pareto Optimal points
+add current best in the Pareto Optimal storage
+Iterate over the sorted points in reverse order:
+    Check if the second element of 'i' is > than the second element of 'current_best':
+        If it is greater, append the point to Pareto Optimal storage and update 'current_best' to point
+return the points stored in Pareto Optimal storage
+
